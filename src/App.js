@@ -22,20 +22,7 @@ function App() {
       setAlert(null)
     },1000 ); 
   }
-  const [mode, setmode] = useState('light');
-  // const toogleMode=()=>{
-  //   if(mode==='light'){
-  //     setmode('dark')
-  //     document.body.style.backgroundColor='black'
-  //     showAlert("Dark Mode has been enabled","success")
-  //   }
-  //   else{
-  //     setmode('light')
-  //     document.body.style.backgroundColor = 'white'
-  //     showAlert("Light Mode has been enabled","success")
-
-  //   }
-  // }
+  
   const removeBodyClasses=()=>{
     document.body.classList.remove('bg-light')
     document.body.classList.remove('bg-dark')
@@ -43,34 +30,18 @@ function App() {
     document.body.classList.remove('bg-danger')
     document.body.classList.remove('bg-primary')
   }
-  const toogleMode=(cls)=>{
-    // removeBodyClasses();
-    // document.body.classList.add('bg-'+cls)//cls =prim, success, danger
-    // console.log(cls)
-    
-    if(mode==='light'){
-      setmode('dark')
-      document.body.style.backgroundColor='black'
-      showAlert("Dark Mode has been enabled","success")
-    }
-    else{
-      setmode('light')
-      document.body.style.backgroundColor = 'white'
-      showAlert("Light Mode has been enabled","success")
-
-    }
-  }
+  
 
   return (
     <>
       <Router>
-      <Navbar title="Text-Utails" aboutus="About Us" mode={mode} toogleMode={toogleMode}/>
+      <Navbar title="Text-Utails" aboutus="About Us"/>
       <Alert alert={alert}/>
       <div className="container my-1">
         <Switch>
-            <Route exact path="/about" component={About} mode={mode} toogleMode={toogleMode} />
+            <Route exact path="/about" component={About}/>
           <Route exact path="/">
-            <TextForm showAlert={showAlert} className="" heading="Enter the text" mode={mode} toogleMode={toogleMode} />
+            <TextForm showAlert={showAlert} className="" heading="Enter the text"/>
           </Route>
         </Switch>
       </div>
