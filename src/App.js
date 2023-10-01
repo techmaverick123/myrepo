@@ -23,19 +23,6 @@ function App() {
     },1000 ); 
   }
   const [mode, setmode] = useState('light');
-  // const toogleMode=()=>{
-  //   if(mode==='light'){
-  //     setmode('dark')
-  //     document.body.style.backgroundColor='black'
-  //     showAlert("Dark Mode has been enabled","success")
-  //   }
-  //   else{
-  //     setmode('light')
-  //     document.body.style.backgroundColor = 'white'
-  //     showAlert("Light Mode has been enabled","success")
-
-  //   }
-  // }
   const removeBodyClasses=()=>{
     document.body.classList.remove('bg-light')
     document.body.classList.remove('bg-dark')
