@@ -8,7 +8,6 @@ export default function TextForm(props) {
         let newText=text.toUpperCase()
         setText(newText)
         props.showAlert("Converted to Uppercase","success")
-        
     }
     const handleClearClick=()=>{
         // console.log('UpperCase Clicked '+text)
@@ -27,6 +26,20 @@ export default function TextForm(props) {
         props.showAlert("Text Copied","success")
     }
     
+    const handleDownload = () => {
+        // file object
+        const file = new Blob([text], { type: "text/plain" });
+    
+        // anchor link
+        const element = document.createElement("a");
+        element.href = URL.createObjectURL(file);
+        element.download = "100ideas-" + Date.now() + ".txt";
+    
+        // simulate link click
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+      };
+
     const handleExtraSpace=()=>{
         let newText=text.split(/[ ]+/)
         setText(newText.join(" "))
@@ -68,6 +81,7 @@ export default function TextForm(props) {
           <button  className="btn btn-primary mx-2 my-2" onClick={handleClearClick} >Clear Text</button>
           <button  className="btn btn-primary mx-2 my-2" onClick={handleCopyClick} >Copy Text</button>
           <button  className="btn btn-primary mx-2 my-2" onClick={handleExtraSpace} >Remove Extra Space</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleDownload}>Download Text</button>
 
     </div>
     
