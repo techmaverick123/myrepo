@@ -1,7 +1,4 @@
-.coin-container {
-  display: flex;
-  justify-content: center;
-}
+
 .grid-container {
     display: grid;
     grid-template-columns: 200px 100px 80px 100px 100px;
