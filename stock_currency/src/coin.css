@@ -25,7 +25,10 @@
   border-bottom: 1px solid #d7d7d7;
   width: 900px;
 }
-
+.coin-container {
+display: flex;
+justify-content: center;
+}
 .coin {
   display: flex;
   align-items: center;
