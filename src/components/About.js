@@ -28,10 +28,7 @@ export default function About(props) {
         }
     } 
     */
-    let mystyle={
-        color: props.mode==='light'?'white':'black',
-        backgroundColor: props.mode==='light'?'black':'white'
-    }
+    
 
   return (
     <div className='container' style={mystyle}>  
