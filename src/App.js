@@ -54,7 +54,12 @@ function App() {
       <Navbar title="Text-Utails" aboutus="About Us" mode={mode} toogleMode={toogleMode}/>
       <Alert alert={alert}/>
       <div className="container my-1">
-        
+        <Switch>
+            <Route exact path="/about" component={About} mode={mode} toogleMode={toogleMode} />
+          <Route exact path="/">
+            <TextForm showAlert={showAlert} className="" heading="Enter the text" mode={mode} toogleMode={toogleMode} />
+          </Route>
+        </Switch>
       </div>
       </Router>
     </>
